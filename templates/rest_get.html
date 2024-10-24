@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Restricted{% endblock %}
+{% block body %}
+{% include 'message.html' %}
+<form action="/restricted" method="POST">
+	<h2>Get Aphorisms</h2>
+	<p><button type="submit" id="request">Request Aphorism</button></p>
+	<input name="csrf_token" type="hidden" value="{{ csrf_token }}">
+	<p> <a href="./login">Log out</a></p>
+</form>
+{% endblock %}
+

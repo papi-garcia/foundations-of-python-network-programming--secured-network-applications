@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Welcome, {{ username }}{% endblock %}
+{% block body %}
+{% for message in flash_messages %}
+  <div class="flash_message">{{ message }}<a href="/">&times;</a></div>
+{% endfor %}
+<form action="/index" method= 'GET' >
+  <p>NEED SOME APHORISMS?</p>
+  <a href="/restricted">Request aphorisms</a>| <a href="/login">Log out</a>
+  <input name="csrf_token" type="hidden" value="{{ csrf_token }}">
+</form>
+{% endblock %}

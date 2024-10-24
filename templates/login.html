@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Log in{% endblock %}
+{% block body %}
+{% include 'message.html' %}
+<form action="./login" method="post">
+  <label>User: <input name="username" value="{{ username }}"></label>
+  <label>Password: <input name="password" type="password"></label>
+  <input name="csrf_token" type="hidden" value="{{ csrf_token }}">
+  <button type="submit">Log in</button>
+</form>
+{% endblock %}
+
